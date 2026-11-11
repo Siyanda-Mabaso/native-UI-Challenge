@@ -1,15 +1,13 @@
-
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 const ExchangeRate = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Exchange rate</Text>
+      <Text style={styles.label}></Text>
 
-      <Text style={styles.rate}>
-        1 ETH = 3.462 USD
-      </Text>
+      <Text style={styles.rate}>1 ETH = 3.462 USD</Text>
+
+       <Text style={styles.label}></Text>
     </View>
   );
 };
@@ -32,6 +30,9 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     fontSize: 14,
     fontWeight: "500",
+    alignItems: "center",
+ 
+    
   },
 });
 
