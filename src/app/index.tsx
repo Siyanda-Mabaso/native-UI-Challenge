@@ -5,12 +5,16 @@ import { View, StyleSheet } from "react-native";
 import Header from "../Components/Header";
 import CurrencyCard from "../Components/CurrencyCard";
 import ExchangeRate from "../Components/ExchangeRate";
+import BuyButton from "../Components/BuyButton";
+import TransactionDetails from "../Components/TransactionDetails";
 export default function Index() {
   return (
     <View style={styles.container}>
    <Header />
 <CurrencyCard />
 <ExchangeRate />
+<BuyButton />
+<TransactionDetails />
     </View>
   );
 }
