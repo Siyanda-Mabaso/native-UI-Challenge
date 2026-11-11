@@ -1,12 +1,16 @@
 
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import Header from "../Components/Header";
 
+import Header from "../Components/Header";
+import CurrencyCard from "../Components/CurrencyCard";
+import ExchangeRate from "../Components/ExchangeRate";
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Header />
+   <Header />
+<CurrencyCard />
+<ExchangeRate />
     </View>
   );
 }
