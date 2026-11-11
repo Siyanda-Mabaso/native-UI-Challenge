@@ -1,44 +1,57 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 
-interface CurrencyCardProps {
-  currency: string;
-  amount: string;
-  balance: string;
-  type: "ethereum" | "usd";
-}
-
-const CurrencyCard: React.FC<CurrencyCardProps> = ({
-  currency,
-  amount,
-  balance,
-  type,
-}) => {
+const CurrencyCard = () => {
   return (
     <View style={styles.container}>
-      {/* Currency Selector */}
-      <View style={styles.currencyRow}>
-        <View style={styles.iconContainer}>
-          {type === "ethereum" ? (
-            <MaterialCommunityIcons name="ethereum" size={29} color="#FFFFFF" />
-          ) : (
-            <Text style={styles.dollarIcon}>$</Text>
-          )}
+      {/* ETH Section */}
+      <View style={styles.currencySection}>
+        <View style={styles.currencyRow}>
+          <View style={styles.iconContainer}>
+            <MaterialCommunityIcons name="ethereum" size={28} color="#FFFFFF" />
+          </View>
+
+          <Text style={styles.currencyText}>ETH</Text>
+
+          <Ionicons name="chevron-down" size={17} color="#A9A2B4" />
         </View>
 
-        <Text style={styles.currencyText}>{currency}</Text>
+        <Text style={styles.amount}>12,695</Text>
 
-        <Ionicons name="chevron-down" size={16} color="#A9A2B4" />
+        <View style={styles.balanceRow}>
+          <Text style={styles.balanceLabel}>Balance</Text>
+          <Text style={styles.balanceValue}>293.0187</Text>
+        </View>
       </View>
 
-      {/* Currency Amount */}
-      <Text style={styles.amount}>{amount}</Text>
+      {/* Divider */}
+      <View style={styles.divider} />
 
-      {/* Balance Information */}
-      <View style={styles.balanceRow}>
-        <Text style={styles.balanceLabel}>Balance</Text>
-        <Text style={styles.balanceValue}>{balance}</Text>
+      {/* USD Section */}
+      <View style={styles.currencySection}>
+        <View style={styles.currencyRow}>
+          <View style={styles.iconContainer}>
+            <Text style={styles.dollarIcon}>$</Text>
+          </View>
+
+          <Text style={styles.currencyText}>USD</Text>
+
+          <Ionicons name="chevron-down" size={17} color="#A9A2B4" />
+        </View>
+
+        <Text style={styles.amount}>43,937.4</Text>
+
+        <View style={styles.balanceRow}>
+          <Text style={styles.balanceLabel}>Balance</Text>
+          <Text style={styles.balanceValue}>12,987.21</Text>
+        </View>
+      </View>
+
+      {/* Swap Button */}
+      <View style={styles.swapButton}>
+        <Ionicons name="swap-vertical" size={23} color="#FFFFFF" />
       </View>
     </View>
   );
@@ -46,41 +59,48 @@ const CurrencyCard: React.FC<CurrencyCardProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 25,
-    paddingVertical: 24,
-    minHeight: 210,
+    backgroundColor: "#211D26",
+    borderRadius: 24,
+    marginTop: 20,
+    position: "relative",
+  },
+
+  currencySection: {
+    paddingHorizontal: 24,
+    paddingVertical: 22,
+    minHeight: 195,
     justifyContent: "space-between",
   },
 
   currencyRow: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 9,
+    gap: 10,
   },
 
   iconContainer: {
-    width: 43,
-    height: 43,
+    width: 42,
+    height: 42,
     borderRadius: 50,
-    backgroundColor: "#29272E",
+    backgroundColor: "#302B37",
     justifyContent: "center",
     alignItems: "center",
   },
 
   dollarIcon: {
     color: "#FFFFFF",
-    fontSize: 27,
-    fontWeight: "400",
+    fontSize: 25,
   },
 
   currencyText: {
     color: "#FFFFFF",
-    fontSize: 20,
+    fontSize: 19,
+    fontWeight: "500",
   },
 
   amount: {
     color: "#FFFFFF",
-    fontSize: 49,
+    fontSize: 46,
     fontWeight: "300",
     letterSpacing: -1.5,
   },
@@ -93,12 +113,32 @@ const styles = StyleSheet.create({
 
   balanceLabel: {
     color: "#A9A2B4",
-    fontSize: 15,
+    fontSize: 14,
   },
 
   balanceValue: {
     color: "#A9A2B4",
-    fontSize: 15,
+    fontSize: 14,
+  },
+
+  divider: {
+    height: 1,
+    backgroundColor: "#100E13",
+  },
+
+  swapButton: {
+    position: "absolute",
+    top: "50%",
+    alignSelf: "center",
+    marginTop: -22,
+    width: 44,
+    height: 44,
+    borderRadius: 50,
+    backgroundColor: "#080709",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 2,
+    elevation: 5,
   },
 });
 
