@@ -11,7 +11,7 @@ import { Ionicons } from "@expo/vector-icons";
 const Header = () => {
   return (
     <View style={styles.container}>
-      {/* Back Button */}
+     
       <TouchableOpacity>
         <Ionicons
           name="chevron-back"
@@ -20,10 +20,9 @@ const Header = () => {
         />
       </TouchableOpacity>
 
-      {/* Screen Title */}
       <Text style={styles.title}>Exchange</Text>
 
-      {/* Notification Icon */}
+      
       <TouchableOpacity>
         <Ionicons
           name="notifications"

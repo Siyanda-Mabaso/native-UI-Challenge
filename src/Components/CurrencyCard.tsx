@@ -6,7 +6,7 @@ import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 const CurrencyCard = () => {
   return (
     <View style={styles.container}>
-      {/* ETH Section */}
+      
       <View style={styles.currencySection}>
         <View style={styles.currencyRow}>
           <View style={styles.iconContainer}>
@@ -26,10 +26,9 @@ const CurrencyCard = () => {
         </View>
       </View>
 
-      {/* Divider */}
       <View style={styles.divider} />
 
-      {/* USD Section */}
+    
       <View style={styles.currencySection}>
         <View style={styles.currencyRow}>
           <View style={styles.iconContainer}>
@@ -49,7 +48,7 @@ const CurrencyCard = () => {
         </View>
       </View>
 
-      {/* Swap Button */}
+    
       <View style={styles.swapButton}>
         <Ionicons name="swap-vertical" size={23} color="#FFFFFF" />
       </View>
